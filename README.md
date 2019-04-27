@@ -30,6 +30,12 @@ Profiling can be started by launching the app with a switch. Find a way to do th
 ```python
 python -m memory_profiler example.py
 ```
+Time based memory reporting is also possible
+
+```python
+mprof run <executable>
+mprof plot
+```      
 
 
 ## Python Object Map
