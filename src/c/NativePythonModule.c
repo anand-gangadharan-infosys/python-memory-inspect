@@ -1,6 +1,10 @@
 #include <Python/Python.h>
 
+int* ptr;
+
 static PyObject* helloworld(PyObject* self) {
+   ptr = (int*) malloc(250*1024 * sizeof(int));
+   printf("%s\n","Native call invoked");
    return Py_BuildValue("s", "Hello, Python extensions!!");
 }
 
