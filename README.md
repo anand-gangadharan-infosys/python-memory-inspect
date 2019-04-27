@@ -8,6 +8,12 @@ Memory Profiler can be installed from source. The module include C code. see htt
 sudo python setup.py install 
 ```
 Above command compiles native code and .so gets installed in /Library/Python/2.7/site-packages in mac. Find out how this work for broadcom tool chain and where in Android Linux File system site-package exist.
+```shell
+export CC=your-platform-triple-gcc
+export LDSHARED="your-platform-triple-ld -shared"
+python setup.py build
+```
+
 
 Once python has access to memory profiler, the code can be annotated with 
 
