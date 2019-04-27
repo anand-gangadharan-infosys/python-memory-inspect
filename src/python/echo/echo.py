@@ -1,7 +1,7 @@
 import socket
 from MessageTracker import MessageTracker
 from memory_profiler import profile
-
+import pdb
 
 def listen():
     connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -15,6 +15,7 @@ def listen():
 
 @profile
 def echo(current_connection,msgTrack):
+    pdb.set_trace()
     while True:
         data = current_connection.recv(2048)
 
@@ -22,6 +23,7 @@ def echo(current_connection,msgTrack):
             current_connection.shutdown(1)
             current_connection.close()
             msgTrack.printMessages()
+            pdb.set_trace()
             break
 
         elif data == 'stop\r\n':

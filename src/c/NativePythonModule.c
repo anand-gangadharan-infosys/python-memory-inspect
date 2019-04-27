@@ -2,9 +2,16 @@
 
 int* ptr;
 
+static int BUFF_SIZE = 250*1024;
+
 static PyObject* helloworld(PyObject* self) {
-   ptr = (int*) malloc(250*1024 * sizeof(int));
    printf("%s\n","Native call invoked");
+   ptr = (int*) malloc(BUFF_SIZE* sizeof(int));
+   int i;
+   for(i=0;i<BUFF_SIZE;i++){
+        *(ptr+i) = 500;
+    }
+   printf("%s\n","Buffer Filled with 500");
    return Py_BuildValue("s", "Hello, Python extensions!!");
 }
 

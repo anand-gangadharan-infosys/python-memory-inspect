@@ -23,6 +23,8 @@ class MessageTracker:
             helloworld.helloworld()
 
 class MyFatObject:
+    #buff = bytearray(os.urandom(1024*1024))
+
     def __init__(self):
         self.buff = bytearray(os.urandom(1024*1024))
 
