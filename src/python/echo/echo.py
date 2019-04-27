@@ -1,5 +1,8 @@
 import socket
 from MessageTracker import MessageTracker
+from memory_profiler import profile
+
+
 def listen():
     connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     connection.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -8,25 +11,28 @@ def listen():
     msgTrack = MessageTracker()
     while True:
         current_connection, address = connection.accept()
-        while True:
-            data = current_connection.recv(2048)
+        echo(current_connection,msgTrack)
 
-            if data == 'quit\r\n':
-                current_connection.shutdown(1)
-                current_connection.close()
-                msgTrack.printMessages()
-                break
+@profile
+def echo(current_connection,msgTrack):
+    while True:
+        data = current_connection.recv(2048)
 
-            elif data == 'stop\r\n':
-                current_connection.shutdown(1)
-                current_connection.close()
-                exit()
+        if data == 'quit\r\n':
+            current_connection.shutdown(1)
+            current_connection.close()
+            msgTrack.printMessages()
+            break
 
-            elif data:
-                current_connection.send(data)
-                msgTrack.addMessage(data)
-                print data
+        elif data == 'stop\r\n':
+            current_connection.shutdown(1)
+            current_connection.close()
+            exit()
 
+        elif data:
+            current_connection.send(data)
+            msgTrack.addMessage(data)
+            print data
 
 if __name__ == "__main__":
     try:
