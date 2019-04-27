@@ -39,11 +39,17 @@ mprof plot
 
 
 ## Python Object Graph
-This is a pure Python tool for analysing Python object Model.https://mg.pov.lt/objgraph/ . It can be installed using pip
+This is a pure Python tool for analysing Python object Model.https://pypi.org/project/objgraph/. It has a dependency on graphviz but both seems to be pure python modules.
+
+Download the source and
 
 ```python
-pip install objgraph
+sudo python setup.py install 
 ```
+The egg files should appear in the site-packages. Thats enough for it to work on Mac.
+
 
 
 ## Python Native
+
+Check the c folder for a helloworld module which exposes a helloworld c api to Python. Read https://www.tutorialspoint.com/python/python_further_extensions.htm
