@@ -107,11 +107,17 @@ pdb> gc.collect()
 pdb> objgraph.show_growth(limit=3)
 
 pdb>objgraph.show_chain( objgraph.find_backref_chain( random.choice(objgraph.by_type('MyBigFatObject')),objgraph.is_proper_module),filename='chain.png')
-
-
-
 ```
 
+To help find how much memory the object is holding a tool is provided in src/python/tool. It computes total memory of all references held by an object. This should give a rough memory usage of the object in question. Note that this is not very accurate but should give us an idea.
+
+```python
+..
+..
+pdb> obj = objgraph.by_type('MyBigFatObject')
+pdb> from tool.objsizer import getsize 
+pdb> getsize(obj)
+```
 
 ## Python Native
 
