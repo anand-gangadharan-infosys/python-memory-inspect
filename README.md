@@ -53,3 +53,5 @@ The egg files should appear in the site-packages. Thats enough for it to work on
 ## Python Native
 
 Check the c folder for a helloworld module which exposes a helloworld c api to Python. Read https://www.tutorialspoint.com/python/python_further_extensions.htm
+
+Memory profiling does not include any memory usage in C layer. Need to find a way to co-relate this memory usage so that optimization effort is spent in the right spot.
