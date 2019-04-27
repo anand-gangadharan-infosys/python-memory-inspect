@@ -1,7 +1,7 @@
 # python-memory-inspect
 
 ## Python Memory Profiler
-Memory Profiler can be installed from source. The module include C code.
+Memory Profiler can be installed from source. The module include C code. see https://pypi.org/project/memory-profiler/
 
 ```python
 sudo python setup.py install 
