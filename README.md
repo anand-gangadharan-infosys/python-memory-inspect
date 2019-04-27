@@ -1,3 +1,4 @@
+This code has a simple echo server with some memory leaks. The server uses some memory intensive native libs too. Using the below tools we should be able detect and fix them
 # python-memory-inspect
 
 ## Python Memory Profiler
