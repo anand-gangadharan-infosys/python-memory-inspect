@@ -24,7 +24,7 @@ def my_func():
     return a
 ```
 
-Profiling can be started by launching the app with a switch.
+Profiling can be started by launching the app with a switch. Find a way to do that for our launcher.
 
 
 ```python
