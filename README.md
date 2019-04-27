@@ -38,6 +38,12 @@ mprof plot
 ```      
 
 
-## Python Object Map
+## Python Object Graph
+This is a pure Python tool for analysing Python object Model.https://mg.pov.lt/objgraph/ . It can be installed using pip
+
+```python
+pip install objgraph
+```
+
 
 ## Python Native
