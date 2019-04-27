@@ -115,9 +115,10 @@ To help find how much memory the object is holding a tool is provided in src/pyt
 ```python
 ..
 ..
-pdb> obj = objgraph.by_type('MyBigFatObject')
-pdb> from tool.objsizer import getsize 
+pdb> obj = objgraph.by_type('MyFatObject')
+pdb> from objsizer import getsize 
 pdb> getsize(obj)
+pdb> getsize(obj[0])
 ```
 
 ## Python Native
