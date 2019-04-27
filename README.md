@@ -91,12 +91,18 @@ What we need to do is
 * Break at the end of it, gc and analyse the memory growth.
 
 ```python
+..
+..
+Break point start
+pdb> import gc
+pdb> import objgraph
 
 pdb> gc.collect()
 pdb> objgraph.show_growth(limit=3)
+pdb>c
 ..
 ..
-..
+Breakpoint end
 pdb> gc.collect()
 pdb> objgraph.show_growth(limit=3)
 
